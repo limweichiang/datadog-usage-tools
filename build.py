@@ -1,6 +1,7 @@
 import yaml
 import json
 import sys
+import os
 
 def set_dashboard_timeseries_widget(dashboard, section_name, widget_name, commit_value):
     for section_iter in dashboard['widgets']:
@@ -82,6 +83,7 @@ def main():
 
     # Write out updated dashboard
     try:
+        os.makedirs("output", exist_ok=True)
         with open("./output/dashboard.json", "w") as output_dashboard_file:
             json.dump(dashboard, output_dashboard_file)
     except Exception as e:
