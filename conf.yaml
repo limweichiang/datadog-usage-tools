@@ -1,0 +1,49 @@
+---
+  infrastructure-hosts:
+    commit: 0
+    warning: null
+
+  logs:
+    ingested-bytes:
+      commit: 0
+      warning: null
+    indexed-logs:
+      commit: 0
+      warning: null
+
+  apm:
+    hosts:
+      commit: 0
+      warning: null
+    indexed-spans:
+      commit: 0
+      warning: null
+    ingested-bytes:
+      commit: 0
+      warning: null
+
+  rum:
+    mobile-rum-sessions:
+      commit: 0
+      warning: null
+    browser-rum-sessions:
+      commit: 0
+      warning: null
+    browser-rum-replay-sessions:
+      commit: 0
+      warning: null
+
+  custom-metrics:
+    custom-metrics:
+      commit: 0
+      warning: null
+    custom-metrics-ingested:
+      commit: 0
+      warning: null
+
+  dashboard:
+    title: "[TEST]Datadog Estimated Usage"
+    description: null
+
+  monitors:
+    notify: "human@somedomain.somewhere"
