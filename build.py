@@ -94,19 +94,19 @@ def main():
         except KeyError:
             print("Error configuring dashboard. Invalid dict key.")
 
-    # Set marker values in Log widgets
+    # Set marker values in Log widgets and configure Log monitors
     if "logs" in conf:
         set_dashboard_timeseries_widget(dashboard, "Log Analytics Estimated Usage", "Logs Ingested Bytes - Cumulative", conf['logs']['ingested-bytes']['commit'])
         set_dashboard_timeseries_widget(dashboard, "Log Analytics Estimated Usage", "Logs Indexed Events - Cumulative", conf['logs']['indexed-logs']['commit'])
         set_monitor("./templates/datadog_estimated_usage_-_logs_ingested_bytes.json", conf['logs']['ingested-bytes']['commit'], conf['logs']['ingested-bytes']['warning'], conf['monitors']['notify'])
         set_monitor("./templates/datadog_estimated_usage_-_logs_indexed_events.json", conf['logs']['indexed-logs']['commit'], conf['logs']['indexed-logs']['warning'], conf['monitors']['notify'])
 
-    # Set marker values in Infra Host widgets
+    # Set marker values in Infra Host widgets and configure Infra Host monitors
     if "infrastructure-hosts" in conf:
         set_dashboard_timeseries_widget(dashboard, "Infrastructure Estimated Usage", "Infrastructure Hosts", conf['infrastructure-hosts']['commit'])
         set_monitor("./templates/datadog_estimated_usage_-_infrastructure_host_count.json", conf['infrastructure-hosts']['commit'], conf['infrastructure-hosts']['warning'], conf['monitors']['notify'])
 
-    # Set marker values in APM widgets
+    # Set marker values in APM widgets and configure APM monitors
     if "apm" in conf:
         set_dashboard_timeseries_widget(dashboard, "APM Estimated Usage", "APM Hosts", conf['apm']['hosts']['commit'])
         set_dashboard_timeseries_widget(dashboard, "APM Estimated Usage", "APM Ingested Bytes - Cumulative", conf['apm']['ingested-bytes']['commit'])
@@ -115,14 +115,14 @@ def main():
         set_monitor("./templates/datadog_estimated_usage_-_apm_ingested_bytes.json", conf['apm']['ingested-bytes']['commit'], conf['apm']['ingested-bytes']['warning'], conf['monitors']['notify'])
         set_monitor("./templates/datadog_estimated_usage_-_apm_indexed_spans.json", conf['apm']['indexed-spans']['commit'], conf['apm']['indexed-spans']['warning'], conf['monitors']['notify'])
 
-    # Set marker values in Custom Metric widgets
+    # Set marker values in Custom Metric widgets and configure Custom Metric monitors
     if "custom-metrics" in conf:
         set_dashboard_timeseries_widget(dashboard, "Custom Metrics Estimated Usage", "Custom Metrics", conf['custom-metrics']['custom-metrics']['commit'])
         set_dashboard_timeseries_widget(dashboard, "Custom Metrics Estimated Usage", "Custom Metrics Ingested", conf['custom-metrics']['custom-metrics-ingested']['commit'])
         set_monitor("./templates/datadog_estimated_usage_-_custom_metrics.json", conf['custom-metrics']['custom-metrics']['commit'], conf['custom-metrics']['custom-metrics']['warning'], conf['monitors']['notify'])
         set_monitor("./templates/datadog_estimated_usage_-_custom_metrics_ingested.json", conf['custom-metrics']['custom-metrics-ingested']['commit'], conf['custom-metrics']['custom-metrics-ingested']['warning'], conf['monitors']['notify'])
     
-    # Set marker values in RUM widgets
+    # Set marker values in RUM widgets and configure RUM Metric monitors
     if "rum" in conf:
         set_dashboard_timeseries_widget(dashboard, "Real User Monitoring Estimated Usage", "Mobile RUM Sessions - Cumulative", conf['rum']['mobile-rum-sessions']['commit'])
         set_dashboard_timeseries_widget(dashboard, "Real User Monitoring Estimated Usage", "Browser RUM Sessions - Cumulative", conf['rum']['browser-rum-sessions']['commit'])
