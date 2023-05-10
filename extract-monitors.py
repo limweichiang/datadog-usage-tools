@@ -49,6 +49,10 @@ def main():
         # Set "estimated_usage" tag to get monitor displayed on Estimated Usage dashboard.
         monitor_definition['tags'] = ["estimated_usage"]
 
+        # Scrub existing threshold values
+        monitor_definition['options']['thresholds']['critical'] = 0
+        monitor_definition['options']['thresholds']['warning'] = 0
+
         # Clean up query value, replacing with jinja format placeholder.
         monitor_definition['query'] = re.sub('\S+$', '{{critical_threshold_placeholder}}', monitor_definition['query'])
         
