@@ -52,7 +52,7 @@ def set_monitor(template_pathname, commit_threshold, warning_threshold = None, n
 
     # Set contact for alert/warning notification, if provided.
     if(notify_contact is not None):
-        template['message'] = template['message'] + "\n" + notify_contact
+        template['message'] = template['message'] + "\n@" + notify_contact
 
     # Craft monitor definition template file
     outfile_name = template['name']
