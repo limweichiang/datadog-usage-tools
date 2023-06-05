@@ -1,4 +1,16 @@
 ---
+  # This is applicable to all configurations
+  # ----------------------------------------
+  #
+  # The mandatory 'commit' value configures the 'Commit' marker on the
+  # appropriate timeline widget, and the alert threshold on the related
+  # monitor. The default is set to '0' to ensure that any accidental use of a
+  # product does not result in unexpected on-demand usage.
+  # 
+  # The optional 'warning' value configures the warning threshold on the
+  # applicable monitor. 'null' disables the warning.
+  #
+
   infrastructure-hosts:
     commit: 0
     warning: null
@@ -41,9 +53,11 @@
       commit: 0
       warning: null
 
+  # Give a name to the Estimated Usage Dashboard
   dashboard:
-    title: "[TEST]Datadog Estimated Usage"
+    title: "Datadog Estimated Usage - <COMPANY NAME>"
     description: null
 
+  # Provide a contact to send usage alerts to. Set to 'null' if not needed
   monitors:
     notify: "human@somedomain.somewhere"
