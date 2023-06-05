@@ -2,6 +2,8 @@
 
 This project is intended to easily create Datadog dashboards and monitors definitions with customized thresholds.
 
+![Screenshot of the Estimated Usage Dashboard](/assets/images/dd-est-usage-dashboard.png)
+
 # Prerequisites / Environment
 
 This tool was developed and tested on MacOS 13.4, using an M1 (ARM achitecture) laptop. 
