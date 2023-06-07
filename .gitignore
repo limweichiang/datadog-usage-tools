@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# MacOS hidden datastore
+**/.DS_Store
+
+# Project output directory
+output/
