@@ -2,6 +2,7 @@
 
 This project is intended to easily create Datadog dashboards and monitors definitions with customized thresholds.
 
+Here is an screenshot of how the dashboard should look like:
 ![Screenshot of the Estimated Usage Dashboard](/assets/images/dd-est-usage-dashboard.png)
 
 # Prerequisites / Environment
@@ -35,11 +36,11 @@ This tool was developed and tested on MacOS 13.4, using an M1 (ARM achitecture) 
 (venv) % pip install -r requirements.txt 
 ```
 
-6) Edit the conf.yaml file to configure the parameters that will be used to build the dashboard.
+6) Edit the `conf.yaml` file to configure the parameters that will be used to build the dashboard.
 
 7) Run the build.
 ```
 % python3 build.py 
 ```
 
-8) Assuming all goes well, you should see an output/ file now created, containing the definition of the Datadog Estimated Usage dashboard (dashboard.json), as well as a number of files starting with 'datadog-estimated-usage-...' which are monitor JSON definitions.
+8) Assuming all goes well, you should see an `output/` file now created, containing the definition of the Datadog Estimated Usage dashboard (`dashboard.json`), as well as a number of files starting with `datadog-estimated-usage-....json` which are monitor JSON definitions.
