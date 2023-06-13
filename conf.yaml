@@ -66,6 +66,7 @@
     title: "Datadog Estimated Usage - <COMPANY NAME>"
     description: null
 
-  # Provide a contact to send usage alerts to. Set to 'null' if not needed
+  # Provide a contact to send usage alerts to. Set to 'null' if not needed.
+  # Use a comma (,) with no spaces to separate multiple email targets, if necessary.
   monitors:
-    notify: "human@somedomain.somewhere"
+    notify: "sre@somedomain.somewhere,ae@somedomain.somewhere,csm@somedomain.somewhere"
